@@ -1,6 +1,7 @@
 package pl.bartekbak.imperator.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.bartekbak.imperator.dao.ContactDAO;
@@ -9,12 +10,12 @@ import pl.bartekbak.imperator.entity.Contact;
 import java.util.List;
 
 @Service
-public class ContactServiceImpl implements ContactService {
+public class ContactServiceJPA implements ContactService {
 
     private ContactDAO contactDAO;
 
     @Autowired
-    public ContactServiceImpl(ContactDAO contactDAO) {
+    public ContactServiceJPA(@Qualifier("contactDaoJPA") ContactDAO contactDAO) {
         this.contactDAO = contactDAO;
     }
 

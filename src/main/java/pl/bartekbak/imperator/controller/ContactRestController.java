@@ -1,6 +1,7 @@
 package pl.bartekbak.imperator.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import pl.bartekbak.imperator.entity.Contact;
 import pl.bartekbak.imperator.service.ContactService;
@@ -14,7 +15,7 @@ public class ContactRestController {
     private ContactService contactService;
 
     @Autowired
-    public ContactRestController(ContactService contactService) {
+    public ContactRestController(@Qualifier("contactServiceSpringData") ContactService contactService) {
         this.contactService = contactService;
     }
 
@@ -24,7 +25,7 @@ public class ContactRestController {
         return contactService.findAllContacts();
     }
 
-    //add mapping for GET/contact/{contactId}
+
     @GetMapping("/contacts/{contactId}")
     public Contact getContact(@PathVariable int contactId) {
         Contact contact = contactService.findContactById(contactId);
