@@ -13,19 +13,19 @@ public class Resolution {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idResolution")
+    @Column(name = "id_resolution")
     private int id;
 
-    @Column(name = "ResolutionNo")
+    @Column(name = "resolution_no")
     private String resolutionId;
 
-    @Column(name = "ResolutionDate")
+    @Column(name = "resolution_date")
     private LocalDate date;
 
-    @Column(name = "ResolutionTitle")
+    @Column(name = "resolution_title")
     private String title;
 
-    @Column(name = "ResolutionRegistry")
+    @Column(name = "resolution_registry")
     private String registryId;
 
     public Resolution() {
@@ -44,5 +44,16 @@ public class Resolution {
         this.date = date;
         this.title = title;
         this.registryId = registryId;
+    }
+
+    @Override
+    public String toString() {
+        return "Resolution{" +
+                "id=" + id +
+                ", resolutionId='" + resolutionId + '\'' +
+                ", date=" + date +
+                ", title='" + title + '\'' +
+                ", registryId='" + registryId + '\'' +
+                '}';
     }
 }
