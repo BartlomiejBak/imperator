@@ -18,7 +18,7 @@ public class ContactServiceSpringData implements ContactService {
 
     @Override
     public List<Contact> findAllContacts() {
-        return contactRepository.findAll();
+        return contactRepository.findAllByOrderByLastNameAsc();
     }
 
     @Override

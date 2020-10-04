@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <title>Add Contact</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <h3>Add Contact</h3>
+        <hr>
+
+        <p class="h4 mb-4">Save Contact</p>
+        <form action="#" th:action="@{/contacts/save}"
+        th:object="${contact}" method="post">
+
+            <!-- Add hidden form field to handle update -->
+            <input type="hidden" th:field="*{id}"/>
+
+            <input type="text" th:field="*{firstName}" class="form-control mb-4 col-4"
+            placeholder="First Name">
+            <input type="text" th:field="*{lastName}" class="form-control mb-4 col-4"
+            placeholder="Last Name">
+            <input type="text" th:field="*{role}" class="form-control mb-4 col-4"
+            placeholder="Role">
+            <input type="email" th:field="*{email}" class="form-control mb-4 col-4"
+            placeholder="Email">
+            <input type="tel" th:field="*{phone}" class="form-control mb-4 col-4"
+            placeholder="Phone">
+            <button type="submit" class="btn btn-info col-2">Save</button>
+
+        </form>
+
+        <hr>
+        <a th:href="@{/contacts/list}">Back to contact list</a>
+
+    </div>
+
+</body>
+</html>
