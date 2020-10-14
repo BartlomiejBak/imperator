@@ -1,5 +1,6 @@
 package pl.bartekbak.imperator.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,6 +10,7 @@ import java.time.LocalDate;
 @Entity
 @Getter @Setter
 @Table(name = "resolution")
+@AllArgsConstructor
 public class Resolution {
 
     @Id
@@ -29,14 +31,6 @@ public class Resolution {
     private String registryId;
 
     public Resolution() {
-    }
-
-    public Resolution(int id, String resolutionId, LocalDate date, String title, String registryId) {
-        this.id = id;
-        this.resolutionId = resolutionId;
-        this.date = date;
-        this.title = title;
-        this.registryId = registryId;
     }
 
     public Resolution(String resolutionId, LocalDate date, String title, String registryId) {

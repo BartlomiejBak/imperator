@@ -1,5 +1,6 @@
 package pl.bartekbak.imperator.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,6 +9,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "contact")
 @Getter @Setter
+@AllArgsConstructor
 public class Contact {
 
     @Id
@@ -31,15 +33,6 @@ public class Contact {
     private String email;
 
     public Contact() {
-    }
-
-    public Contact(int id, String firstName, String lastName, String role, String phone, String email) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.role = role;
-        this.phone = phone;
-        this.email = email;
     }
 
     public Contact(String firstName, String lastName, String role, String phone, String email) {
