@@ -11,7 +11,7 @@ import java.time.LocalDate;
 @Table(name = "duedilligence")
 @AllArgsConstructor
 @Getter @Setter
-public class DueDilligence {
+public class DueDiligence {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +27,7 @@ public class DueDilligence {
     @Column(name = "dd_registry")
     private String ddRegistry;
 
-    public DueDilligence() {
+    public DueDiligence() {
     }
 
     @Override

@@ -20,10 +20,13 @@ public class Tranche {
 
     @Column(name = "capital_date")
     private LocalDate capitalDate;
+
     @Column(name = "donation_date")
     private LocalDate donationDate;
+
     @Column(name = "capital_amount")
     private double capitalAmount;
+
     @Column(name = "donation_amount")
     private double donationAmount;
 
