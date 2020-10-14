@@ -35,14 +35,6 @@ public class Contact {
     public Contact() {
     }
 
-    public Contact(String firstName, String lastName, String role, String phone, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.role = role;
-        this.email = email;
-        this.phone = phone;
-    }
-
     @Override
     public String toString() {
         return "Contact{" +

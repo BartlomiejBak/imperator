@@ -8,8 +8,8 @@ import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
-@Getter @Setter
 @Table(name = "resolution")
+@Getter @Setter
 @AllArgsConstructor
 public class Resolution {
 
