@@ -1,8 +1,9 @@
-package pl.bartekbak.imperator.service;
+package pl.bartekbak.imperator.service.spring.data;
 
 import org.springframework.stereotype.Service;
 import pl.bartekbak.imperator.dao.ContactRepository;
 import pl.bartekbak.imperator.entity.Contact;
+import pl.bartekbak.imperator.service.ContactService;
 
 import java.util.List;
 import java.util.Optional;

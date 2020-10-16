@@ -1,8 +1,9 @@
-package pl.bartekbak.imperator.service;
+package pl.bartekbak.imperator.service.spring.data;
 
 import org.springframework.stereotype.Service;
 import pl.bartekbak.imperator.dao.ResolutionRepository;
 import pl.bartekbak.imperator.entity.Resolution;
+import pl.bartekbak.imperator.service.ResolutionService;
 
 import java.util.List;
 import java.util.Optional;
