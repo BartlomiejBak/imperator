@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <title>Contact list</title>
+</head>
+<body>
+
+<div class="container">
+    <h3>Contact List</h3>
+    <hr>
+
+    <!-- Add a button -->
+    <a th:href="@{/contacts/showFormForAdd}"
+    class="btn btn-primary btn-sm mb-3">
+        Add Contact
+    </a>
+
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Role</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="tempContact : ${contacts}">
+            <td th:text="${tempContact.firstName}"/>
+            <td th:text="${tempContact.lastName}"/>
+            <td th:text="${tempContact.role}"/>
+            <td th:text="${tempContact.phone}"/>
+            <td th:text="${tempContact.email}"/>
+            <!-- add button -->
+            <td>
+                <a th:href="@{/contacts/showFormForUpdate(contactId=${tempContact.id})}"
+                class="btn btn-info btn-sm">
+                    Update
+                </a>
+                <a th:href="@{/contacts/delete(contactId=${tempContact.id})}"
+                class="btn btn-danger btn-sm"
+                onclick="if (!(confirm('Are you sure you want to delete this contact?'))) return false">
+                    Delete
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <a th:href="@{/main/menu}">Back to main menu</a>
+</div>
+</body>
+</html>

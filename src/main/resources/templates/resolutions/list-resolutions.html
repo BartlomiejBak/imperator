@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <meta charset="UTF-8">
+    <title>Resolution list</title>
+</head>
+<body>
+
+<div class="container">
+    <h3>Resolution List</h3>
+    <hr>
+
+    <!-- Add a button -->
+    <a th:href="@{/resolutions/showFormForAdd}"
+       class="btn btn-primary btn-sm mb-3">
+        Add Resolution
+    </a>
+
+    <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+        <tr>
+            <th>Resolution Id</th>
+            <th>Date</th>
+            <th>Title</th>
+            <th>Registry</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="tempResolution : ${resolutions}">
+            <td th:text="${tempResolution.resolutionId}"/>
+            <td th:text="${tempResolution.date}"/>
+            <td th:text="${tempResolution.title}"/>
+            <td th:text="${tempResolution.registryId}"/>
+            <!-- add button -->
+            <td>
+                <a th:href="@{/resolutions/showFormForUpdate(resolutionId=${tempResolution.id})}"
+                   class="btn btn-info btn-sm">
+                    Update
+                </a>
+                <a th:href="@{/resolutions/delete(resolutionId=${tempResolution.id})}"
+                   class="btn btn-danger btn-sm"
+                   onclick="if (!(confirm('Are you sure you want to delete this resolution?'))) return false">
+                    Delete
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <hr>
+    <a th:href="@{/main/menu}">Back to main menu</a>
+
+</div>
+</body>
+</html>
