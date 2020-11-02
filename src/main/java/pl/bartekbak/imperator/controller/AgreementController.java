@@ -39,7 +39,7 @@ public class AgreementController {
     public String showFormForUpdate(@RequestParam("agreementId") int id, Model model) {
         Agreement agreement = agreementService.findAgreementById(id);
         model.addAttribute(agreement);
-        return "agreement/add-agreement-form";
+        return "agreements/add-agreement-form";
     }
 
     @PostMapping("/save")
