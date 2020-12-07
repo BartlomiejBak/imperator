@@ -25,12 +25,13 @@ all data related to their tasks, documentation and processes.
 ####
 ## Setup
 The application is developed in IntelliJ IDEA Ultimate Edition.
-Can be run via IDE.
+To start the app it is necessary to implement proper database (schema.sql will be provided soon)
 
 ## Status
 In progress...
 
 To do/to be completed:
+* Add schema for database
 * Frontend (proper display of elements, graphics),
 * Logging in and access protection
 * ...
