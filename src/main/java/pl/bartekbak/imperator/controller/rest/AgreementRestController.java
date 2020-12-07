@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
-public class AgreementRestController {
+public class  AgreementRestController {
 
     private AgreementService agreementService;
 
