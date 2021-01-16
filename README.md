@@ -1,4 +1,6 @@
-#IMPERATOR
+[![CircleCI](https://circleci.com/gh/BartlomiejBak/imperator.svg?style=svg)](https://circleci.com/gh/BartlomiejBak/imperator)
+
+# IMPERATOR
 CRM system for investment fund.
 
 ## Table of Contents
